@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const lines = data.split("\n").slice(1);
         return lines.map(line => {
             const [title, icon, destination] = line.split(",").map(item => item.replace(/"/g, '').trim());
-            return { title, icon, destination };
+            return {
+                title,
+                icon,
+                destination
+            };
         });
     }
 
@@ -62,14 +66,16 @@ document.addEventListener("DOMContentLoaded", function() {
             loadingScreen.classList.add("show");
         });
     }
-    
+
     function hideLoadingScreen() {
         loadingScreen.classList.remove("show");
         loadingScreen.addEventListener('transitionend', () => {
             loadingScreen.style.display = "none";
-        }, { once: true });
+        }, {
+            once: true
+        });
     }
-    
+
     function handleAppClick(destination) {
         if (redirectMode === "iframe") {
             if (destination.startsWith('javascript:')) {
@@ -92,8 +98,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         } else if (redirectMode === "redir") {
             window.location.href = destination;
-        }
-    }    
+        };
+    };
+
+    function addIframeLinkHandler(iframe) {
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        const links = iframeDocument.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(link.href, '_blank');
+            });
+        });
+    };
 });
 
 // installable module //

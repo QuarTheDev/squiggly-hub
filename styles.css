@@ -71,6 +71,11 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    user-select: none;
+}
+
+img {
+    pointer-events: none;
 }
 
 .header {
@@ -134,13 +139,13 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0;
-    cursor: pointer;
 }
 
 .app-grid .app img {
     max-width: 75px;
     max-height: 75px;
     border-radius: 25%;
+    background-color: black;
 }
 
 .app-grid .app .title {
@@ -179,6 +184,18 @@ body {
     font-size: 24px;
 }
 
+.app {
+    transition: transform 0.2s ease;
+}
+
+.app.dragging {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+.app-grid.dragging-over {
+    border: 2px dashed #ccc;
+}
 
 /* WM SPARK LOADER CSS */
 
