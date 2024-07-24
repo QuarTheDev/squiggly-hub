@@ -1,0 +1,317 @@
+/* fonts preload */
+@font-face {
+    font-family: "BogleWeb-Black";
+    src: url("assets/typefaces/bogle_std/BogleWeb-Black.eot");
+    src: url("assets/typefaces/bogle_std/BogleWeb-Black.eot?#iefix") format("embedded-opentype"),
+    url("assets/typefaces/bogle_std/BogleWeb-Black.woff2") format("woff2"),
+    url("assets/typefaces/bogle_std/BogleWeb-Black.woff") format("woff"),
+    url("assets/typefaces/bogle_std/BogleWeb-Black.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BogleWeb-BlackItalic";
+    src: url("assets/typefaces/bogle_std/BogleWeb-BlackItalic.eot");
+    src: url("assets/typefaces/bogle_std/BogleWeb-BlackItalic.eot?#iefix") format("embedded-opentype"),
+    url("assets/typefaces/bogle_std/BogleWeb-BlackItalic.woff2") format("woff2"),
+    url("assets/typefaces/bogle_std/BogleWeb-BlackItalic.woff") format("woff"),
+    url("assets/typefaces/bogle_std/BogleWeb-BlackItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BogleWeb-Bold";
+    src: url("assets/typefaces/bogle_std/BogleWeb-Bold.eot");
+    src: url("assets/typefaces/bogle_std/BogleWeb-Bold.eot?#iefix") format("embedded-opentype"),
+    url("assets/typefaces/bogle_std/BogleWeb-Bold.woff2") format("woff2"),
+    url("assets/typefaces/bogle_std/BogleWeb-Bold.woff") format("woff"),
+    url("assets/typefaces/bogle_std/BogleWeb-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BogleWeb-BoldItalic";
+    src: url("assets/typefaces/bogle_std/BogleWeb-BoldItalic.eot");
+    src: url("assets/typefaces/bogle_std/BogleWeb-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("assets/typefaces/bogle_std/BogleWeb-BoldItalic.woff2") format("woff2"),
+    url("assets/typefaces/bogle_std/BogleWeb-BoldItalic.woff") format("woff"),
+    url("assets/typefaces/bogle_std/BogleWeb-BoldItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BogleWeb-Regular";
+    src: url("assets/typefaces/bogle_std/BogleWeb-Regular.eot");
+    src: url("assets/typefaces/bogle_std/BogleWeb-Regular.eot?#iefix") format("embedded-opentype"),
+    url("assets/typefaces/bogle_std/BogleWeb-Regular.woff2") format("woff2"),
+    url("assets/typefaces/bogle_std/BogleWeb-Regular.woff") format("woff"),
+    url("assets/typefaces/bogle_std/BogleWeb-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BogleWeb-RegularItalic";
+    src: url("assets/typefaces/bogle_std/BogleWeb-RegularItalic.eot");
+    src: url("assets/typefaces/bogle_std/BogleWeb-RegularItalic.eot?#iefix") format("embedded-opentype"),
+    url("assets/typefaces/bogle_std/BogleWeb-RegularItalic.woff2") format("woff2"),
+    url("assets/typefaces/bogle_std/BogleWeb-RegularItalic.woff") format("woff"),
+    url("assets/typefaces/bogle_std/BogleWeb-RegularItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* general styles */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.header {
+    font-family: "BogleWeb-Bold", Arial, sans-serif;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(4, 31, 65, 1), rgba(0, 0, 0, 0));
+}
+
+.header .logo {
+    width: 5em;
+    height: auto;
+    margin-right: 1.5em;
+    scale: 1.35;
+}
+
+.title-text {
+    font-size: 2.75em;
+    text-align: center;
+    color: #ffc220;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('assets/images/1.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-grid {
+    width: 75%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: solid white 1px;
+    border-radius: 35px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    overflow-y: scroll;
+    height: 35vh;
+}
+
+.app-grid .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+.app-grid .app img {
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 25%;
+}
+
+.app-grid .app .title {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 7.5em;
+}
+
+.loading-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(2em);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.loading-screen.show {
+    opacity: 1;
+}
+
+.loading-text {
+    font-size: 24px;
+}
+
+
+/* WM SPARK LOADER CSS */
+
+.loaderRoot {
+    color: #74767c;
+}
+
+.loaderContainer {
+    display: inline-block;
+    line-height: 1;
+}
+
+.loader {
+    height: 3rem;
+    width: 3rem;
+}
+
+.spark {
+	animation-duration: 1.2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(.77, 0, .175, 1);
+	fill: currentColor;
+	transform-origin: 24px 24px;
+}
+
+.s2 {
+	animation-name: s2;
+}
+
+@keyframes s2 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	35% {
+		transform: rotate(60deg);
+	}
+
+	70% {
+		transform: rotate(1turn);
+	}
+
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.s3 {
+	animation-name: s3;
+}
+
+@keyframes s3 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	35% {
+		transform: rotate(120deg);
+	}
+
+	70% {
+		transform: rotate(1turn);
+	}
+
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.s4 {
+	animation-name: s4;
+}
+
+@keyframes s4 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	35% {
+		transform: rotate(180deg);
+	}
+
+	70% {
+		transform: rotate(1turn);
+	}
+
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.s5 {
+	animation-name: s5;
+}
+
+@keyframes s5 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	35% {
+		transform: rotate(240deg);
+	}
+
+	70% {
+		transform: rotate(1turn);
+	}
+
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.s6 {
+	animation-name: s6;
+}
+
+@keyframes s6 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	35% {
+		transform: rotate(300deg);
+	}
+
+	70% {
+		transform: rotate(1turn);
+	}
+
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+/* WM SPARK LOADER CSS */
