@@ -1,16 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const version = "0.2.0a";
+    
+    //
+
     const appGrid = document.querySelector(".app-grid");
     const loadingScreen = document.getElementById("loading-screen");
     const redirectMode = "iframe";
+    const vnDiv = document.getElementById('version-number');
+    vnDiv.textContent = `v${version}`;
+    vnDiv.addEventListener('click', () => {
+        window.open('https://github.com/project-mira/alto/', '_blank');
+    });
 
     fetch("assets/data/apps.csv")
         .then(response => response.text())
         .then(csvData => {
-            const apps = parseCSV(csvData);
+            const apps = parseFunction(csvData);
             populateApps(apps);
         });
 
-    function parseCSV(data) {
+    function parseFunction(data) {
         const lines = data.split("\n").slice(1);
         return lines.map(line => {
             const [title, icon, destination] = line.split(",").map(item => item.replace(/"/g, '').trim());
@@ -116,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // installable module //
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open('plup-cache').then(cache => {
+        caches.open('alto-webapp-cache').then(cache => {
             return cache.addAll([
                 '/',
                 '/index.html',
@@ -147,7 +156,22 @@ self.addEventListener('install', event => {
                 '/assets/typefaces/bogle_std/BogleWeb-RegularItalic.woff2',
                 '/assets/typefaces/bogle_std/BogleWeb-RegularItalic.woff',
                 '/assets/typefaces/bogle_std/BogleWeb-RegularItalic.ttf',
-                '/assets/data/apps.csv'
+                '/assets/icons/alcoholsales.png',
+                '/assets/icons/meatwalmart.png',
+                '/assets/icons/none.jpg',
+                '/assets/icons/onewm.png',
+                '/assets/icons/plup.png',
+                '/assets/icons/settings.png',
+                '/assets/icons/upfront.png',
+                '/assets/icons/wmtips.png',
+                '/assets/images/1.png',
+                '/assets/images/2.png',
+                '/assets/branding/favi/Alto.ico',
+                '/assets/branding/favi/Mira.ico',
+                '/assets/branding/favi/AltoCircle.ico',
+                '/assets/branding/favi/MiraCircle.ico',
+                '/assets/branding/favi/AltoRounded.ico',
+                '/assets/branding/favi/MiraRounded.ico',
             ]);
         })
     );
@@ -161,15 +185,15 @@ self.addEventListener('fetch', event => {
     );
 });
 
-// if ('serviceWorker' in navigator) {
-//     window.addEventListener('load', () => {
-//         navigator.serviceWorker.register('/service-worker.js').then(registration => {
-//             console.log('Service Worker registered with scope:', registration.scope);
-//         }, err => {
-//             console.log('Service Worker registration failed:', err);
-//         });
-//     });
-// };
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('sw registered w/ scope ', registration.scope);
+        }, err => {
+            console.log('sw registration failed - ', err);
+        });
+    });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     // selftest
