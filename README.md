@@ -1,5 +1,5 @@
 <p align="center">
-<img src="assets/branding/fragments/256px/AltoRounded.png" width="128" height="128"></img>
+<img src="https://raw.githubusercontent.com/project-mira/alto/main/assets/branding/frag/256/AltoRounded.png" width="128" height="128"></img>
+<h1>Alto</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/proj-squiggly/alto"><code>proj-squiggly/alto</code></a> is the home of Alto - the #1 sidekick to the Me@Walmart app. In development.
 </p>
-<h1 style="text-align:center;">Alto</h1>
-<p style="text-align:center;"><a target="_blank" rel="noopener noreferrer" href="https://github.com/proj-squiggly/alto"><code>proj-squiggly/alto</code></a> is the home of Alto - the #1 sidekick to the Me@Walmart app. In development.
