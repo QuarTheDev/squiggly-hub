@@ -1,25 +1,40 @@
 {
-    "name": "Squiggly",
-    "short_name": "Squiggly",
-    "description": "Squiggly Hub is an open-source assistive webapp for Walmart associates.",
+    "name": "Alto",
+    "short_name": "Alto",
+    "description": "Alto - #1 sidekick to the Me@Walmart app",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#0071ce",
     "theme_color": "#041f41",
     "icons": [
       {
-        "src": "assets/branding/fragments/o_icon_512.png",
+        "src": "assets/branding/frag/1024/AltoRounded.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/branding/frag/512/AltoRounded.png",
         "sizes": "512x512",
         "type": "image/png"
       },
       {
-        "src": "assets/branding/fragments/o_icon_256.png",
+        "src": "assets/branding/frag/256/AltoRounded.png",
         "sizes": "256x256",
         "type": "image/png"
       },
       {
-        "src": "assets/branding/fragments/o_icon_128.png",
+        "src": "assets/branding/frag/128/AltoRounded.png",
         "sizes": "128x128",
+        "type": "image/png"
+      }
+      {
+        "src": "assets/branding/frag/64/AltoRounded.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      }
+      {
+        "src": "assets/branding/frag/32/AltoRounded.png",
+        "sizes": "32x32",
         "type": "image/png"
       }
     ]

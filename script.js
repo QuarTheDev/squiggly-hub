@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const version = "0.2.0a";
+    const version = "0.2.1a";
     
     //
 
