@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const version = "0.2.1a";
+    const version = "0.2.2a";
     
     //
 
@@ -187,7 +187,7 @@ self.addEventListener('fetch', event => {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+        navigator.serviceWorker.register('/assets/data/sw.js').then(registration => {
             console.log('sw registered w/ scope ', registration.scope);
         }, err => {
             console.log('sw registration failed - ', err);
